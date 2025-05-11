@@ -17,16 +17,16 @@ export default function Navbar() {
 	const [open, setOpen] = useState(false);
 
 	return (
-		<nav className="w-full flex flex-col h-20 absolute top-0 left-0">
+		<nav className="w-full flex flex-col h-20 absolute top-0 left-0 outline-hidden">
 			<div
-				className={`flex flex-col duration-200 relative overflow-hidden items-center ${open ? 'min-h-screen' : 'min-h-full'} bg-white-500 z-40`}
+				className={`flex flex-col duration-200 relative overflow-hidden items-center ${open ? 'min-h-screen' : 'min-h-full'} bg-white-500 z-40 pointer-events-none`}
 			>
 				<div
 					className={`flex flex-row min-h-20 place-content-center items-center h-20 gap-8 lg:gap-5 mr-5`}
 				>
 					<span
 						className={
-							'inline mx-3 cursor-pointer absolute left-0 top-4 lg:left-5 lg:top-6 duration-500 size-15 hover:size-17 ' +
+							'inline mx-3 cursor-pointer absolute left-0 top-4 lg:left-5 lg:top-6 duration-300 size-15 hover:size-17 pointer-events-auto ' +
 							(open ? '-rotate-280' : 'rotate-none')
 						}
 						onClick={() => setOpen(!open)}
@@ -39,7 +39,7 @@ export default function Navbar() {
 							priority={true}
 						/>
 					</span>
-					<Link href="/">
+					<Link href="/" className="pointer-events-auto">
 						<span className="relative">
 							<Yarnline />
 							<Title />
@@ -54,10 +54,20 @@ export default function Navbar() {
 					</Link>
 				</div>
 
-				<ul className={`flex flex-col w-50 text-center absolute left-5 top-20`}>
+				<ul
+					className={`flex flex-col w-50 text-center absolute left-5 top-20 pointer-events-auto`}
+				>
 					<li>
 						<NavbarBtn
-							href="/about-us"
+							href="#about-me"
+							extraStyle={'-rotate-3 hover:rotate-3 active:rotate-5'}
+						>
+							About
+						</NavbarBtn>
+					</li>
+					<li>
+						<NavbarBtn
+							href="#shop"
 							extraStyle={'rotate-3 hover:-rotate-3 active:-rotate-5'}
 						>
 							My Shop
@@ -65,15 +75,7 @@ export default function Navbar() {
 					</li>
 					<li>
 						<NavbarBtn
-							href="/locations"
-							extraStyle={'-rotate-3 hover:rotate-3 active:rotate-5'}
-						>
-							About Me
-						</NavbarBtn>
-					</li>
-					<li>
-						<NavbarBtn
-							href="/contact"
+							href="#contact"
 							extraStyle={'rotate-3 hover:-rotate-3 active:-rotate-5'}
 						>
 							Contact

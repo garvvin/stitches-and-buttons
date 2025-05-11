@@ -1,0 +1,14 @@
+.page-section {
+	border-left: solid rgb(233, 167, 216) 10px;
+	border-right: solid rgb(233, 167, 216) 10px;
+}
+
+.page-section::-webkit-scrollbar {
+	width: 10px;
+	background-color: #e5e7eb;
+}
+
+.page-section::-webkit-scrollbar-thumb {
+	background: #888;
+	border-radius: 15px;
+}

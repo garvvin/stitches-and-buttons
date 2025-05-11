@@ -1,0 +1,12 @@
+@keyframes drawLine {
+	100% {
+		stroke-dashoffset: 0;
+	}
+}
+
+#yarnline {
+	stroke: #d6d6d6;
+	animation: 1.8s ease-in forwards drawLine;
+	stroke-dasharray: 509;
+	stroke-dashoffset: 509;
+}
