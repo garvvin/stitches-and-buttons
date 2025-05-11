@@ -5,6 +5,10 @@
 	src: url('/fonts/Caveat-VariableFont_wght.ttf');
 }
 
+.caveat {
+	font-family: 'caveat';
+}
+
 :root {
 	--background: #fafaf9;
 	--foreground: #171717;
