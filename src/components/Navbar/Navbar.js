@@ -6,8 +6,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 //css
-import '../../css/title.css';
-import '../../css/yarnline.css';
+import '../../app/css/title.css';
+import '../../app/css/yarnline.css';
 
 //components
 import Title from './Title';
@@ -17,7 +17,7 @@ export default function Navbar() {
 	const [open, setOpen] = useState(false);
 
 	return (
-		<nav className="w-full flex flex-col h-20 absolute top-0 left-0 outline-hidden">
+		<nav className="w-full flex flex-col h-22 absolute top-0 left-0 outline-hidden">
 			<div
 				className={`flex flex-col duration-200 relative overflow-hidden items-center ${open ? 'min-h-screen' : 'min-h-full'} bg-white-500 z-40 pointer-events-none`}
 			>
@@ -39,7 +39,7 @@ export default function Navbar() {
 							priority={true}
 						/>
 					</span>
-					<Link href="/" className="pointer-events-auto">
+					<Link href="/" className="pointer-events-auto outline-none">
 						<span className="relative">
 							<Yarnline />
 							<Title />
@@ -48,7 +48,7 @@ export default function Navbar() {
 								alt="Pink yarn ball"
 								width={100}
 								height={100}
-								className="absolute top-0 left-11 lg:-translate-x-30 -translate-x-12 w-18 h-13 duration-200 lg:-translate-x-34 lg:translate-y-5 lg:w-25 lg:h-18"
+								className="absolute top-0 left-11 lg:-translate-x-30 -translate-x-12 w-18 h-auto duration-200 lg:-translate-x-34 lg:translate-y-5 lg:w-25 lg:h-18"
 							/>
 						</span>
 					</Link>
@@ -59,7 +59,7 @@ export default function Navbar() {
 				>
 					<li>
 						<NavbarBtn
-							href="#about-me"
+							href="/#about-me"
 							extraStyle={'-rotate-3 hover:rotate-3 active:rotate-5'}
 						>
 							About
@@ -67,7 +67,7 @@ export default function Navbar() {
 					</li>
 					<li>
 						<NavbarBtn
-							href="#shop"
+							href="/shop"
 							extraStyle={'rotate-3 hover:-rotate-3 active:-rotate-5'}
 						>
 							My Shop
@@ -75,7 +75,7 @@ export default function Navbar() {
 					</li>
 					<li>
 						<NavbarBtn
-							href="#contact"
+							href="/#contact"
 							extraStyle={'rotate-3 hover:-rotate-3 active:-rotate-5'}
 						>
 							Contact

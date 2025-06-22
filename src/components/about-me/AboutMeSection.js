@@ -1,6 +1,6 @@
 'use client';
 import Image from 'next/image';
-import '../../css/book.css';
+import '../../app/css/book.css';
 import { useState } from 'react';
 
 export default function AboutMeSection({}) {
@@ -8,7 +8,7 @@ export default function AboutMeSection({}) {
 
 	return (
 		<div
-			className="h-180 bg-gray-200 flex flex-row justify-center items-center snap-start"
+			className="h-180 flex flex-row justify-center items-center snap-start"
 			id="about-me"
 		>
 			<div
