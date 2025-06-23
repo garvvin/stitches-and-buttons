@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from 'next/font/google';
 import './css/globals.css';
 import Navbar from '../components/Navbar/Navbar';
+import Head from 'next/head';
 
 const geistSans = Geist({
 	variable: '--font-geist-sans',
@@ -20,8 +21,17 @@ export const metadata = {
 export default function RootLayout({ children }) {
 	return (
 		<html lang="en">
+			<Head>
+				<meta
+					name="viewport"
+					content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+					key="viewportFitCover"
+				></meta>
+			</Head>
+
 			<body
 				className={`${geistSans.variable} ${geistMono.variable} antialiased h-screen overflow-hidden`}
+				style={{ paddingTop: 'env(safe-area-inset-top)' }}
 			>
 				<Navbar />
 				{children}

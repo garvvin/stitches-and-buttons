@@ -17,7 +17,10 @@ export default function Navbar() {
 	const [open, setOpen] = useState(false);
 
 	return (
-		<nav className="w-full flex flex-col h-22 absolute top-0 left-0 outline-hidden">
+		<nav
+			className="w-full flex flex-col h-22 absolute top-0 left-0 outline-hidden"
+			style={{ paddingTop: 'env(safe-area-inset-top)' }}
+		>
 			<div
 				className={`flex flex-col duration-200 relative overflow-hidden items-center ${open ? 'min-h-screen' : 'min-h-full'} bg-white-500 z-40 pointer-events-none`}
 			>
