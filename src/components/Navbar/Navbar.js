@@ -30,7 +30,9 @@ export default function Navbar() {
 					<span
 						className={
 							'inline mx-3 cursor-pointer absolute left-0 top-4 lg:left-5 lg:top-6 duration-300 size-15 hover:size-17 pointer-events-auto ' +
-							(open ? '-rotate-280' : 'rotate-none')
+							(open
+								? '-rotate-280 active:-rotate-310'
+								: 'rotate-none active:rotate-30')
 						}
 						onClick={() => setOpen(!open)}
 					>
@@ -40,6 +42,7 @@ export default function Navbar() {
 							width={100}
 							height={100}
 							priority={true}
+							draggable={false}
 						/>
 					</span>
 					<Link href="/" className="pointer-events-auto outline-none">

@@ -27,15 +27,15 @@ export default function ContactSection({}) {
 			<div className="flex flex-col sm:flex-row justify-center gap-y-4 gap-x-10">
 				<ContactButton
 					innerContent={<h3 className="font-bold text-2xl">FAQ</h3>}
-					extraCss={'hover:rotate-5'}
+					extraCss={'hover:rotate-5 active:rotate-7'}
 				/>
 				<ContactButton
 					innerContent={<h3 className="font-bold text-2xl">Call</h3>}
-					extraCss={'hover:-rotate-5'}
+					extraCss={'hover:-rotate-5 active:-rotate-7'}
 				/>
 				<ContactButton
 					innerContent={<h3 className="font-bold text-2xl">Email</h3>}
-					extraCss={'hover:rotate-5'}
+					extraCss={'hover:rotate-5 active:rotate-7'}
 				/>
 			</div>
 		</div>
