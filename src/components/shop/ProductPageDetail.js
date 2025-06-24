@@ -1,8 +1,10 @@
 'use client';
 import GradientOverlay from '@/components/GradientOverlay';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useState } from 'react';
 import { TiShoppingCart } from 'react-icons/ti';
+import { LuArrowLeftFromLine } from 'react-icons/lu';
 
 export default function ProductPageDetail({ productData }) {
 	const price = productData.default_price;
@@ -14,7 +16,16 @@ export default function ProductPageDetail({ productData }) {
 		<div className="flex w-screen absolute bottom-0 h-8/9">
 			<div className="overflow-y-scroll w-full h-full">
 				<div className="flex justify-center">
-					<div className="flex flex-col overflow-visible mb-50 md:flex-row pt-20 md:pt-20 md:justify-center items-center px-5 sm:px-20 max-w-370">
+					<div className="flex flex-col overflow-visible mb-50 md:flex-row md:mt-20 md:pt-0 mt-20 pt-10 md:justify-center items-center mx-5 sm:mx-20 max-w-370 relative">
+						<Link
+							href="/store"
+							className="absolute flex items-center gap-1 right-1/2 translate-x-1/2 md:translate-0 md:right-1 -top-3 md:top-1 cursor-pointer hover:text-pink-300 duration-300 p-2"
+						>
+							<LuArrowLeftFromLine className="pointer-events-none" />
+							<button className="pointer-events-none md:hidden">
+								Back to store
+							</button>
+						</Link>
 						<div className="min-w-full md:min-w-1/2 flex justify-center items-center mb-7 md:mb-0">
 							<div
 								className={`w-70 h-104 lg:w-100 active:-translate-y-2 lg:h-149 rounded-xl overflow-hidden bg-stone-200 flex flex-col items-center justify-center duration-300 cursor-pointer select-none border-2 border-gray-300 hover:shadow-xl active:shadow-xl`}
