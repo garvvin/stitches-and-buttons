@@ -5,12 +5,12 @@
 }
 
 #Title {
-	stroke: #ff97e5;
+	stroke: #f9a8d4;
 	transition-duration: 0.3s;
 }
 
 a:hover #Title {
-	stroke: #f7bdff;
+	stroke: #fbcfe8;
 }
 
 /*individual letter modifications */

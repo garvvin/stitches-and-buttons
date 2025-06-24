@@ -9,13 +9,13 @@ import './css/page.css';
 
 export default function Home() {
 	return (
-		<div>
-			<GradientOverlay />
-			<div className="overflow-y-auto absolute top-25 h-5/6 w-screen scroll-smooth snap-y snap-proximity page-section">
+		<div className="flex w-screen h-8/9 absolute bottom-0">
+			<div className="overflow-y-auto h-full w-full scroll-smooth snap-y snap-proximity page-section">
 				<AboutMeSection />
 				<ShopSection />
 				<ContactSection />
 			</div>
+			<GradientOverlay />
 		</div>
 	);
 }

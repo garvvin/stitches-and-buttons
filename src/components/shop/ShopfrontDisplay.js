@@ -11,8 +11,8 @@ export default async function ShopfrontDisplay({ shopfrontProducts }) {
 	//console.log(featuredProducts);
 
 	return (
-		<div className="w-full flex flex-wrap gap-5 gap-y-12 md:gap-10 lg:gap-18 justify-center overflow-x-hidden my-3 pt-3 pb-14 sm:px-3 duration-300 relative overflow-hidden">
-			<GradientOverlay gradientSection={'bottom'} />
+		<div className="w-full flex flex-wrap gap-5 gap-y-12 md:gap-10 lg:gap-18 justify-center overflow-x-hidden my-3 pt-3 sm:px-3 duration-300 relative overflow-hidden">
+			<GradientOverlay gradientSection={'bottom'} className="h-9/10" />
 			{featuredProducts.data.map((productData, i) => (
 				<ProductDisplay
 					productData={productData}

@@ -13,8 +13,8 @@ export default function ShopSection({}) {
 				<h3 className="font-bold text-3xl caveat mb-10">Explore Items</h3>
 				<ShopfrontDisplay />
 				<Link
-					href="/shop"
-					className="caveat text-blue-500 hover:text-blue-300 active:text-blue-600 duration-300 text-xl relative group my-3 -translate-y-7"
+					href="/store"
+					className="caveat text-blue-500 hover:text-blue-300 active:text-blue-600 duration-300 text-xl relative group z-2 p-10 py-5"
 				>
 					<span>View All</span>
 					<span className="absolute translate-x-2 group-hover:translate-x-3 group-active:translate-x-5 duration-300">

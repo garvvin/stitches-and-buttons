@@ -22,7 +22,7 @@ export default function Navbar() {
 			style={{ paddingTop: 'env(safe-area-inset-top)' }}
 		>
 			<div
-				className={`flex flex-col duration-200 relative overflow-hidden items-center ${open ? 'min-h-screen' : 'min-h-full'} bg-white-500 z-40 pointer-events-none`}
+				className={`flex flex-col duration-200 relative overflow-hidden items-center ${open ? 'min-h-screen' : 'min-h-full'} z-40 pointer-events-none md:ms-5 lg:ms-10`}
 			>
 				<div
 					className={`flex flex-row min-h-20 place-content-center items-center h-20 gap-8 lg:gap-5 mr-5`}
@@ -45,8 +45,8 @@ export default function Navbar() {
 							draggable={false}
 						/>
 					</span>
-					<Link href="/" className="pointer-events-auto outline-none">
-						<span className="relative">
+					<Link href="/" className="pointer-events-auto outline-none pt-7">
+						<span className="relative md:me-80">
 							<Yarnline />
 							<Title />
 							<Image
@@ -54,14 +54,14 @@ export default function Navbar() {
 								alt="Pink yarn ball"
 								width={100}
 								height={100}
-								className="absolute top-0 left-11 lg:-translate-x-30 -translate-x-12 w-18 h-auto duration-200 lg:-translate-x-34 lg:translate-y-5 lg:w-25 lg:h-18"
+								className="absolute top-0 left-11 -translate-x-12 min-w-18 w-auto h-auto duration-200 lg:-translate-x-34 lg:translate-y-5 lg:min-w-25 lg:h-18"
 							/>
 						</span>
 					</Link>
 				</div>
 
 				<ul
-					className={`flex flex-col w-50 text-center absolute left-5 top-20 pointer-events-auto`}
+					className={`flex flex-col w-50 text-center absolute left-5 top-20 pointer-events-auto gap-5 sm:gap-8 mt-5`}
 				>
 					<li>
 						<NavbarBtn
@@ -73,16 +73,16 @@ export default function Navbar() {
 					</li>
 					<li>
 						<NavbarBtn
-							href="/shop"
+							href="/store"
 							extraStyle={'rotate-3 hover:-rotate-3 active:-rotate-5'}
 						>
-							My Shop
+							Store
 						</NavbarBtn>
 					</li>
 					<li>
 						<NavbarBtn
 							href="/#contact"
-							extraStyle={'rotate-3 hover:-rotate-3 active:-rotate-5'}
+							extraStyle={'-rotate-3 hover:rotate-3 active:rotate-5'}
 						>
 							Contact
 						</NavbarBtn>

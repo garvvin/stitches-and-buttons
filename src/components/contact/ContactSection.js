@@ -3,7 +3,10 @@ import ContactButton from './ContactButton';
 
 export default function ContactSection({}) {
 	return (
-		<div className="min-h-180 flex flex-col items-center mt-30" id="contact">
+		<div
+			className="min-h-180 flex flex-col items-center mt-30 mb-40"
+			id="contact"
+		>
 			<div className="flex flex-col md:flex-row justify-center items-center md:px-20">
 				<div className="w-3/4 md:ms-10 lg:w-19/40 mt-8 h-auto flex justify-center items-center order-last lg:order-first">
 					<Image
@@ -11,7 +14,7 @@ export default function ContactSection({}) {
 						alt={'Transparent pink telephone image.'}
 						width={500}
 						height={200}
-						className="-translate-y-10"
+						className="-translate-y-10 w-auto h-auto"
 					/>
 				</div>
 				<div className="w-21/40 flex flex-col justify-center items-center mb-10">
