@@ -22,11 +22,11 @@ export default function Navbar() {
 
 	return (
 		<nav
-			className="w-full flex flex-col h-22 fixed top-0 left-0 outline-hidden"
+			className="w-full flex flex-col h-22 fixed top-0 z-90 left-0 outline-hidden"
 			style={{ paddingTop: 'env(safe-area-inset-top)' }}
 		>
 			<div
-				className={`flex flex-col duration-200 relative overflow-hidden items-center ${open ? 'min-h-screen' : 'min-h-full'} z-40 pointer-events-none md:ms-5 lg:ms-10`}
+				className={`flex flex-col duration-200 relative overflow-hidden items-center ${open ? 'min-h-screen' : 'min-h-full'} z-90 pointer-events-none md:ms-5 lg:ms-10`}
 			>
 				{/* NAV BAR ANIMATED TITLE THING */}
 
