@@ -22,7 +22,7 @@ export default function Navbar() {
 
 	return (
 		<nav
-			className="w-full flex flex-col h-22 absolute top-0 left-0 outline-hidden"
+			className="w-full flex flex-col h-22 fixed top-0 left-0 outline-hidden"
 			style={{ paddingTop: 'env(safe-area-inset-top)' }}
 		>
 			<div
