@@ -13,13 +13,16 @@ import '../../app/css/yarnline.css';
 //components
 import Title from './Title';
 import Yarnline from './Yarnline';
+import { useCartStore } from '@/store/cart-store';
 
 export default function Navbar() {
 	const [open, setOpen] = useState(false);
+	const { items } = useCartStore();
+	const cartCount = items.reduce((acc, item) => acc + item.quantity, 0);
 
 	return (
 		<nav
-			className="w-full flex flex-col h-24 absolute top-0 left-0 outline-hidden"
+			className="w-full flex flex-col h-22 absolute top-0 left-0 outline-hidden"
 			style={{ paddingTop: 'env(safe-area-inset-top)' }}
 		>
 			<div
@@ -28,7 +31,7 @@ export default function Navbar() {
 				{/* NAV BAR ANIMATED TITLE THING */}
 
 				<div
-					className={`flex flex-row min-h-20 place-content-center items-center h-20 gap-8 lg:gap-5 mr-5`}
+					className={`flex flex-row min-h-20 place-content-center items-center h-20 gap-8 lg:gap-5 me-5`}
 				>
 					<span
 						className={
@@ -49,28 +52,29 @@ export default function Navbar() {
 						/>
 					</span>
 					<Link href="/" className="pointer-events-auto outline-none pt-7">
-						<span className="relative md:me-80">
-							<Yarnline />
-							<Title />
+						<div className="relative h-15 flex items-center gap-1 lg:gap-5 pe-3 md:pe-10 lg:pe-20">
 							<Image
 								src="/images/yarn.png"
 								alt="Pink yarn ball"
 								width={100}
 								height={100}
-								className="absolute top-0 left-11 -translate-x-12 min-w-18 h-13 duration-200 translate-y-0 lg:-translate-x-34 lg:translate-y-5 lg:min-w-25 lg:h-18"
+								className="w-15 h-10 sm:w-22 sm:h-15 duration-200 lg:min-w-25 lg:h-18"
 							/>
-						</span>
+							<Title />
+							<Yarnline />
+						</div>
 					</Link>
 				</div>
 
 				{/* NAV BAR CART BUTTON */}
 				<Link
 					href="/cart"
-					className="absolute right-10 md:right-20 top-15 sm:top-5 z-50 text-gray-400 hover:text-pink-300 group cursor-pointer p-2 pointer-events-auto duration-200"
+					className="absolute right-7 md:right-17 top-7 z-50 text-gray-400 hover:text-pink-300 group cursor-pointer p-2 pointer-events-auto duration-200 flex items-center"
 				>
-					<button className="text-3xl pointer-events-none group-hover:rotate-8 duration-200 group-active:text-[1.8rem]">
+					<button className="text-3xl pointer-events-none group-hover:text-[1.92rem] duration-200 group-active:text-[1.8rem]">
 						<TiShoppingCart />
 					</button>
+					{cartCount > 0 && <span className="caveat text-xl">{cartCount}</span>}
 				</Link>
 
 				{/* NAV BAR BUTTONS (SIDEBAR) */}

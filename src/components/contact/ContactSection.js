@@ -1,3 +1,4 @@
+'use client';
 import Image from 'next/image';
 import ContactButton from './ContactButton';
 
@@ -33,11 +34,29 @@ export default function ContactSection({}) {
 					extraCss={'hover:rotate-5 active:rotate-7'}
 				/>
 				<ContactButton
-					innerContent={<h3 className="font-bold text-2xl">Call</h3>}
+					onClick={() => {
+						window.open('tel:1800000000');
+					}}
+					innerContent={
+						<h3 className="font-bold text-2xl">
+							Call{' '}
+							<span className="block underline text-lg">+1 (800) 000-000</span>
+						</h3>
+					}
 					extraCss={'hover:-rotate-5 active:-rotate-7'}
 				/>
 				<ContactButton
-					innerContent={<h3 className="font-bold text-2xl">Email</h3>}
+					onClick={() => {
+						window.open('mailto:EmailAddress@email.com');
+					}}
+					innerContent={
+						<h3 className="font-bold text-2xl">
+							Email
+							<span className="block underline text-base">
+								EmailAddress@email.com
+							</span>
+						</h3>
+					}
 					extraCss={'hover:rotate-5 active:rotate-7'}
 				/>
 			</div>

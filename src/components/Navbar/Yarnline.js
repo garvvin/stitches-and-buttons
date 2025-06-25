@@ -4,7 +4,7 @@ export default function Yarnline({}) {
 			viewBox="0 0 458 74"
 			fill="none"
 			xmlns="http://www.w3.org/2000/svg"
-			className="w-57 lg:w-90 h-18 absolute translate-x-15 lg:-translate-x-3 -translate-y-3 lg:translate-y-3 duration-300"
+			className="absolute left-13 md:left-20 bottom-0.4 w-47 md:w-57 lg:w-90 h-18 duration-300 -z-1"
 		>
 			<g id="yarn" filter="url(#filter0_d_13_3)">
 				<path

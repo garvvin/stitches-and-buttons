@@ -5,7 +5,7 @@ export default function Title({}) {
 			fill="none"
 			xmlns="http://www.w3.org/2000/svg"
 			id="title-svg"
-			className="w-50 h-10 translate-x-20 lg:translate-x-10 duration-200 lg:w-70 lg:h-20"
+			className="w-40 h-8 sm:w-50 sm:h-10 lg:-translate-y-2 duration-200 lg:w-70 lg:h-20"
 		>
 			<g id="Title">
 				<path
