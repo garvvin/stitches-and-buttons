@@ -1,7 +1,9 @@
 export default function GradientOverlay({ gradientSection, className }) {
 	return (
 		<div
-			className={'absolute h-full w-full pointer-events-none z-30 ' + className}
+			className={
+				'absolute h-full w-full pointer-events-none z-30 bottom-0 ' + className
+			}
 			style={{
 				background: gradientSection
 					? gradientSection == 'top'

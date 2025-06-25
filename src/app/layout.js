@@ -30,7 +30,7 @@ export default function RootLayout({ children }) {
 			</Head>
 
 			<body
-				className={`${geistSans.variable} ${geistMono.variable} antialiased h-screen overflow-hidden`}
+				className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen overflow-hidden`}
 				style={{ paddingTop: 'env(safe-area-inset-top)' }}
 			>
 				<Navbar />
