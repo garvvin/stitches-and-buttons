@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useState, useCallback, useRef, useEffect } from 'react';
 import { TiShoppingCart } from 'react-icons/ti';
 import { LuArrowLeftFromLine } from 'react-icons/lu';
+import { FaStoreAlt } from 'react-icons/fa';
 import { useCartStore } from '@/store/cart-store';
 import ProductDisplay from './ProductDisplay';
 
@@ -107,7 +108,7 @@ export default function ProductPageDetail({ productData }) {
 							<div className="w-full mt-8 flex flex-col items-center md:items-start">
 								<div className="flex gap-2 mb-4 items-center">
 									<button
-										className="size-8 border-1 border-gray-300 rounded-lg  cursor-pointer hover:border-pink-300 hover:bg-pink-300 hover:text-white duration-300"
+										className="size-8 border-1 border-gray-300 rounded-lg  cursor-pointer hover:border-pink-300 hover:bg-pink-300 active:bg-pink-400 active:text-white hover:text-white duration-300"
 										onClick={() =>
 											setQuantity((prevQuantity) =>
 												Math.max(prevQuantity - 1, minQuantity),
@@ -124,7 +125,7 @@ export default function ProductPageDetail({ productData }) {
 										className="rounded-lg border-gray-300 border-2 w-13 h-11 text-center "
 									/>
 									<button
-										className="size-8 border-1 border-gray-300 rounded-lg  cursor-pointer hover:border-pink-300 hover:bg-pink-300 hover:text-white duration-300"
+										className="size-8 border-1 border-gray-300 rounded-lg  cursor-pointer hover:border-pink-300 hover:bg-pink-300 active:bg-pink-400 active:text-white hover:text-white duration-300"
 										onClick={() =>
 											setQuantity((prevQuantity) =>
 												Math.min(prevQuantity + 1, maxQuantity),
@@ -195,8 +196,23 @@ text-gray-400 text-center text-xl"
 							: ''}
 					</span>
 
+					<div className="flex gap-5 items-center mt-3">
+						<Link href="/store">
+							<button className="text-gray-500 caveat text-xl text-center cursor-pointer hover:text-pink-400 active:text-pink-500 duration-300 flex items-center gap-1">
+								<FaStoreAlt />
+								Store
+							</button>
+						</Link>
+						<span className="">|</span>
+						<Link href="/cart">
+							<button className="text-gray-500 caveat text-xl text-center cursor-pointer hover:text-emerald-400 active:text-emerald-500 duration-300 flex items-center">
+								<TiShoppingCart />
+								Cart
+							</button>
+						</Link>
+					</div>
 					<button
-						className="text-gray-500 caveat text-xl text-center cursor-pointer hover:text-gray-400 duration-300 pt-3"
+						className="text-gray-500 caveat text-xl text-center cursor-pointer hover:text-red-400 active:text-red-700 duration-300 pt-2"
 						onClick={() =>
 							setShowModal({ show: false, success: showModal.success })
 						}

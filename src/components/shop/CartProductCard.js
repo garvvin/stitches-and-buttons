@@ -40,7 +40,7 @@ export default function CartProductCard({ cartProductData }) {
 
 				<div className="flex gap-2 mb-1 items-center justify-start">
 					<button
-						className="size-8 border-1 border-gray-300 rounded-lg text-gray-400 cursor-pointer hover:border-pink-300 hover:bg-pink-300 hover:text-white duration-300"
+						className="size-8 border-1 border-gray-300 rounded-lg text-gray-400 cursor-pointer hover:border-pink-300 hover:bg-pink-300 active:bg-pink-400 active:text-white hover:text-white duration-300"
 						onClick={onRemoveCartItem}
 					>
 						-
@@ -53,7 +53,7 @@ export default function CartProductCard({ cartProductData }) {
 						className="rounded-lg border-gray-300 border-2 w-13 h-11 text-center text-gray-400"
 					/>
 					<button
-						className="size-8 border-1 border-gray-300 rounded-lg text-gray-400 cursor-pointer hover:border-pink-300 hover:bg-pink-300 hover:text-white duration-300"
+						className="size-8 border-1 border-gray-300 rounded-lg text-gray-400 cursor-pointer hover:border-pink-300 hover:bg-pink-300 active:bg-pink-400 active:text-white hover:text-white duration-300"
 						onClick={onAddCartItem}
 					>
 						+
