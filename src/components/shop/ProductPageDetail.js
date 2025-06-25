@@ -168,7 +168,9 @@ const ProductPurchaseModal = ({
 				className="w-4/5 max-w-100 border-2 border-gray-300 rounded-xl min-h-95 bg-white p-4 flex flex-col justify-center gap-5 items-center"
 				onClick={(e) => e.stopPropagation()}
 			>
-				<h2 className="caveat text-2xl font-bold  text-center mt-3 text-pink-300">
+				<h2
+					className={`caveat text-2xl font-bold text-center mt-3 ${showModal.success ? 'text-pink-300' : 'text-gray-400'}`}
+				>
 					{showModal.success ? (
 						<span>
 							Added to Cart!{' '}
@@ -186,12 +188,21 @@ text-gray-400 text-center text-xl"
 				<div className="w-full flex justify-center">
 					<ProductDisplay productData={productData} extraClass={''} />
 				</div>
-				<div className="w-full flex justify-center">
+				<div className="w-full flex flex-col items-center">
 					<span className="caveat text-emerald-600 text-xl">
-						{latestQuantityRef.current > 1
+						{latestQuantityRef.current > 1 && showModal.success
 							? `$${((productData.default_price.unit_amount * latestQuantityRef.current) / 100).toFixed(2)} total @ $${(productData.default_price.unit_amount / 100).toFixed(2)}/each`
 							: ''}
 					</span>
+
+					<button
+						className="text-gray-500 caveat text-xl text-center cursor-pointer hover:text-gray-400 duration-300 pt-3"
+						onClick={() =>
+							setShowModal({ show: false, success: showModal.success })
+						}
+					>
+						Close
+					</button>
 				</div>
 			</div>
 		</div>
