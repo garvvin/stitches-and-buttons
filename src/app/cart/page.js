@@ -6,6 +6,7 @@ import { LuArrowLeftFromLine } from 'react-icons/lu';
 import { FaBoxOpen } from 'react-icons/fa6';
 import CartProductCard from '@/components/shop/CartProductCard';
 import Link from 'next/link';
+import { checkoutAction } from '../checkout/checkout-action';
 
 export default function Cart({}) {
 	const { items } = useCartStore();
@@ -60,9 +61,28 @@ export default function Cart({}) {
 								Subtotal: ${(totalPrice / 100).toFixed(2)}
 							</h3>
 
-							<button className="text-3xl caveat border-2 border-gray-300 text-gray-500 duration-300 hover:text-white active:bg-pink-400 hover:border-pink-300 hover:bg-pink-300 cursor-pointer rounded-xl px-3 py-1 md:w-50">
-								Check Out
-							</button>
+							{items && items.length > 0 ? (
+								<form action={checkoutAction}>
+									{/* <Link href="/checkout"></Link>*/}
+									<input
+										type="hidden"
+										name="items"
+										value={JSON.stringify(items)}
+									/>
+									<button
+										className={`text-3xl caveat border-2 border-gray-300 duration-300 hover:text-white active:bg-pink-400 hover:border-pink-300 hover:bg-pink-300 ${items && items.length > 0 ? 'cursor-pointer' : 'cursor-not-allowed'} rounded-xl px-3 py-1 md:w-50`}
+									>
+										Check Out
+									</button>
+								</form>
+							) : (
+								<button
+									className={`text-3xl caveat border-2 border-gray-300 duration-300 hover:text-white active:bg-pink-400 hover:border-pink-300 hover:bg-pink-300 ${items && items.length > 0 ? 'cursor-pointer' : 'cursor-not-allowed'} rounded-xl px-3 py-1 md:w-50`}
+									disabled
+								>
+									Check Out
+								</button>
+							)}
 						</div>
 					</div>
 				</div>

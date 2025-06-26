@@ -4,7 +4,7 @@ import { useCartStore } from '@/store/cart-store';
 
 import { FaRegTrashAlt } from 'react-icons/fa';
 
-export default function CartProductCard({ cartProductData }) {
+export default function CartProductCard({ cartProductData, onSuccessPage }) {
 	const { addCartItem, removeCartItem } = useCartStore();
 
 	const onRemoveCartItem = () => removeCartItem(cartProductData.id, 1);
@@ -38,34 +38,40 @@ export default function CartProductCard({ cartProductData }) {
 						: `$${(pricePerProduct / 100).toFixed(2)}`}
 				</h5>
 
-				<div className="flex gap-2 mb-1 items-center justify-start">
-					<button
-						className="size-8 border-1 border-gray-300 rounded-lg text-gray-400 cursor-pointer hover:border-pink-300 hover:bg-pink-300 active:bg-pink-400 active:text-white hover:text-white duration-300"
-						onClick={onRemoveCartItem}
-					>
-						-
-					</button>
-					<input
-						placeholder="Loading..."
-						value={cartProductData.quantity}
-						disabled={true}
-						type="number"
-						className="rounded-lg border-gray-300 border-2 w-13 h-11 text-center text-gray-400"
-					/>
-					<button
-						className="size-8 border-1 border-gray-300 rounded-lg text-gray-400 cursor-pointer hover:border-pink-300 hover:bg-pink-300 active:bg-pink-400 active:text-white hover:text-white duration-300"
-						onClick={onAddCartItem}
-					>
-						+
-					</button>
+				{onSuccessPage ? (
+					<div></div>
+				) : (
+					<div className="flex gap-2 mb-1 items-center justify-start">
+						<button
+							className="size-8 border-1 border-gray-300 rounded-lg text-gray-400 cursor-pointer hover:border-pink-300 hover:bg-pink-300 active:bg-pink-400 active:text-white hover:text-white duration-300"
+							onClick={onRemoveCartItem}
+						>
+							-
+						</button>
+						<input
+							placeholder="Loading..."
+							value={cartProductData.quantity}
+							disabled={true}
+							type="number"
+							className="rounded-lg border-gray-300 border-2 w-13 h-11 text-center text-gray-400"
+						/>
+						<button
+							className="size-8 border-1 border-gray-300 rounded-lg text-gray-400 cursor-pointer hover:border-pink-300 hover:bg-pink-300 active:bg-pink-400 active:text-white hover:text-white duration-300"
+							onClick={onAddCartItem}
+						>
+							+
+						</button>
+					</div>
+				)}
+			</div>
+			{!onSuccessPage && (
+				<div
+					className="size-12 cursor-pointer duration-300 text-gray-400 active:text-red-900 hover:text-red-400 flex justify-center items-center group"
+					onClick={onDeleteCartItem}
+				>
+					<FaRegTrashAlt className="me-3 text-xl transition duration-300 group-active:text-[1.2rem] group-hover:text-[1.4rem]" />
 				</div>
-			</div>
-			<div
-				className="size-12 cursor-pointer duration-300 text-gray-400 active:text-red-900 hover:text-red-400 flex justify-center items-center group"
-				onClick={onDeleteCartItem}
-			>
-				<FaRegTrashAlt className="me-3 text-xl transition duration-300 group-active:text-[1.2rem] group-hover:text-[1.4rem]" />
-			</div>
+			)}
 		</div>
 	);
 }

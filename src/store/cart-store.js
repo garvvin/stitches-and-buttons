@@ -54,10 +54,14 @@ export const useCartStore = create()(
 							.filter((existingItem) => existingItem.quantity > 0),
 					};
 				}),
-			clearCart: () =>
-				set(() => {
+			clearCart: () => {
+				let prevCart;
+				set((state) => {
+					prevCart = JSON.parse(JSON.stringify(state.items));
 					return { items: [] };
-				}),
+				});
+				return prevCart;
+			},
 		}),
 		{ name: 'cart' },
 	),

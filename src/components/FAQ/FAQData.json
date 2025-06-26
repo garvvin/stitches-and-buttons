@@ -1,0 +1,26 @@
+[
+	{
+		"question": "What is the refund policy?",
+		"answer": "Refunds can be made through our email contact. Tell us the reason for return and instructions will be given from there. Full refunds can be made."
+	},
+	{
+		"question": "How long does it take to ship?",
+		"answer": "It takes about 3-4 weeks but can vary because we are a small team and our items are locally produced and hand-made."
+	},
+	{
+		"question": "Do you offer international shipping?",
+		"answer": "Yes! However, we only offer international shipping for a small additional fee."
+	},
+	{
+		"question": "How can I track my order?",
+		"answer": "Once the order is placed, a tracking code & link will be emailed to you."
+	},
+	{
+		"question": "Why can't I order more than 20 of each item?",
+		"answer": "We are a small business that can only produce so much at a time. We always strive for the best in quality over quantity."
+	},
+	{
+		"question": "Can I place custom orders?",
+		"answer": "Yes! However, to make a custom order, it can only be placed through our email contacts."
+	}
+]
